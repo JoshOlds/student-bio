@@ -1,6 +1,27 @@
 function BioService(){
 
-    var _students = []
+    var _students = [
+        {
+            name: 'Jersh',
+            id: 001,
+            gitLink: 'https://github.com/JoshOlds',
+            imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+            gradStatus: false,
+            passions: ['Robits','Things','Fire'],
+            currentJob: 'Absolutely Nothing',
+            email: 'Joshua.Olds@Outlook.com'
+        },
+        {
+        name: 'Mark',
+        id: 002,
+        gitLink: 'https://github.com/JoshOlds',
+        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+        gradStatus: false,
+        passions: ['Robits','Things','Fire'],
+        currentJob: 'Absolutely Nothing',
+        email: 'Joshua.Olds@Outlook.com'  
+        }
+    ]
 
     function Student(id){
         this.name;
@@ -27,6 +48,19 @@ function BioService(){
 
     this.getStudents = function(){
         return _students
+    }
+
+    this.getCurrentStudent = function(){
+        return {
+            name: 'Jersh',
+            id: 001,
+            gitLink: 'https://github.com/JoshOlds',
+            imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+            gradStatus: false,
+            passions: ['Robits','Things','Fire'],
+            currentJob: 'Absolutely Nothing',
+            email: 'Joshua.Olds@Outlook.com'
+        }
     }
 
     this.getStudentById = function(id){
