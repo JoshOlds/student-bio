@@ -1,0 +1,147 @@
+function BioService(){
+
+    var _students = []
+
+    function Student(id){
+        this.name;
+        this.id;
+        this.gitLink;
+        this.imgLink;
+        this.gradStatus;
+        this.passions = []
+        this.currentJob;
+        this.email;
+    }
+
+
+    this.loadStudents = function(){
+        var localData = localStorage.getItem("bio-users")
+        if (localData) {
+            _students = JSON.parse(localData)
+        }
+    }
+
+    this.saveStudents = function(){
+        localStorage.setItem("bio-users", JSON.stringify(_students))
+    }
+
+    this.getStudents = function(){
+        return _students
+    }
+
+    this.getStudentById = function(id){
+        for (var i = 0; i < _students.length; i++) {
+            var item = _students[i];
+            if (item.id == id) {
+                return item;
+            }
+            
+        }
+    }
+
+    this.getStudentsByName = function(name){
+        var arr = [];
+        for (var i = 0; i < _students.length; i++) {
+            var item = _students[i];
+            if (item.name.includes(name)) {
+                arr.push(item)
+            }
+        }
+        return arr
+    }
+
+    this.getStudentsByGradStatus = function(status){
+        var arr = [];
+        for (var i = 0; i < _students.length; i++) {
+            var item = _students[i];
+            if (item.gradStatus === status) {
+                arr.push(item)
+            }
+        }
+        return arr
+    }
+
+    this.getStudentsByPassion = function(passion){
+        var arr = [];
+        for (var i = 0; i < _students.length; i++) {
+            var item = _students[i];
+            var found = false
+            for (var j = 0; j < item.passion.length; j++) {
+                var currentPassion = item.passion[j];
+                if (currentPassion.contains(passion)) {
+                    found = true
+                }
+            }
+            if (found) {
+                arr.push(item)
+            }
+        }
+        return arr
+    }
+
+    this.getStudentsByJob = function(job){
+        var arr = [];
+        for (var i = 0; i < _students.length; i++) {
+            var items = _students[i];
+            if (item.job.includes(job)) {
+                arr.push(item)
+            }
+        }
+        return arr
+    }
+
+    this.getStudentsByAny = function(searchTerm){
+        var arr = [];
+        arr = arr.concat(this.getStudentsByName(searchTerm))
+        arr = arr.concat(this.getStudentsByPassion(searchTerm))
+        arr = arr.concat(this.getStudentsByJob(searchTerm))
+        arr = this.eliminateDuplicates(arr)
+        return arr 
+    }
+
+    this.eliminateDuplicates = function (arr) {
+        var newArr = [];
+        arr.forEach(function (item) {
+            var exists = false;
+            newArr.forEach(function (item2) {
+                if (item2.id == item.id) {
+                    exists = true;
+                }
+            });
+            if (!exists) {
+                newArr.push(item);
+            }
+        });
+        return newArr;
+    }    
+
+
+    this.updateStudent = function(id,student){
+        var currentStudent = this.getStudentById(id);
+        if (student.name != undefined) {
+            currentStudent.name = student.name
+        }
+        if (student.gitLink != undefined) {
+            currentStudent.gitLink = student.gitLink
+        }
+        if (student.imgLink != undefined) {
+            currentStudent.imgLink = student.imgLink
+        }
+        if (student.gradStatus != undefined) {
+            currentStudent.gradStatus = student.gradStatus
+        }
+        if (student.passions != undefined) {
+            currentStudent.passions = student.passions
+        }
+        if (student.currentJob != undefined) {
+            currentStudent.currentJob = student.currentJob
+        }
+        if (student.email != undefined) {
+            currentStudent.email = student.email
+        }
+        return currentStudent
+    }
+
+
+
+}
