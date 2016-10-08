@@ -48,7 +48,7 @@ function UserController() {
                                     </div>
                                 </div>
                                 <p>Current Position</p>
-                                <h5 class="current">${currentJob}</h5>
+                                <h5 class="current">${student.currentJob}</h5>
                                 <h5>${student.email}</h5>
                             </div>
                         </div>`
@@ -73,56 +73,56 @@ function UserController() {
             for (var k = 3; k < 6; k++) {
                 skillsItem2 += `<li>${student.passions[k]}</li>`
             }
-            template += `<div class="row">
-                            <div class="medium-2 columns"></div>
-                            <div class="medium-5 columns">
-                                <div class="card flip front face">
-                                    <div class="box">
-                                        <div class="image">
-                                            <img src="${student.imgLink}">
-                                            <div class="content">
-                                                <h4 class="name" id="name">${student.name}</h4>
-                                                <a href="${student.gitLink}" target="_blank">
-                                                    <i class="fi-social-github"></i>
-                                                </a>
-                                                <a href="${student.linkLink}" target="_blank">
-                                                    <i class="fi-social-linkedin"></i>
-                                                </a>
+            template += `
+                <div class="medium-6 columns">
+                    <div>
+                        <div class="box">
+                            <div>
+                                <img src="${student.imgLink}">
+                                <div>
+                                    <h4 class="name" id="name">${student.name}</h4>
+                                    <a href="${student.gitLink}" target="_blank">
+                                        <i class="fi-social-github"></i>
+                                    </a>
+                                    <a href="${student.linkLink}" target="_blank">
+                                        <i class="fi-social-linkedin"></i>
+                                    </a>
 
-                                                <p class="skills/passions" id="passions">Skills and Areas of Interest</p>
-                                                <div class="row">
-                                                    <div class="medium-6 columns">
-                                                        <ul class="skills">
-                                                            ${skillsItem1}
-                                                        </ul>
-                                                    </div>
-                                                    <div class="medium-6 columns">
-                                                        <ul class= "skills">
-                                                            ${skillsItem2}
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <p>current position</p>
-                                                <h5 class="current" id="currentJob">${student.currentJob}</h5>
-                                                <h5>${student.email}</h5>
-                                            </div>
-                                               </div>
+                                    <p>Skills and Areas of Interest</p>
+                                    <div class="row">
+                                        <div class="medium-6 columns">
+                                            <ul>
+                                                ${skillsItem1}
+                                            </ul>
+                                        </div>
+                                        <div class="medium-6 columns">
+                                            <ul>
+                                                ${skillsItem2}
+                                            </ul>
                                         </div>
                                     </div>
+                                    <p>current position</p>
+                                    <h5>${student.currentJob}</h5>
+                                    <h5>${student.email}</h5>
                                 </div>
-                                <!--end front of card-->
-
-                              
-
-
                             </div>
-                            <!--end card row-->
-                        </div>`
+                        </div>
+                    </div>
+                </div>
+            </div>`
+                        
         }
         studentElem.html(template)
     }
     $('#current-student').on('click', 'button.pencil', function () {
-        debugger
+        $('#input-name').val(_currentStudent.name)
+        $('#input-git').val(_currentStudent.gitLink)
+        $('#input-link').val(_currentStudent.linkLink)
+        $('#input-img').val(_currentStudent.imgLink)
+        $('#input-grad').val(_currentStudent.gradStatus)
+        $('#input-passions').val(_currentStudent.passions)
+        $('#input-job').val(_currentStudent.currentJob)
+        $('#input-email').val(_currentStudent.email)
         $('#no-edit').addClass('hidden')
         $('#edit').removeClass('hidden')
     })
