@@ -70,11 +70,11 @@ function UserController() {
             var skillsItem1 = '';
             var skillsItem2 = '';
             // don't hardcode for a certain number of passions or else you will hit an undefined value in the array if there are less
-            for (var j = 1; j < student.passions.length; j++) {
+            for (var j = 0; j < student.passions.length; j++) {
                 if (j < 3) {
                     skillsItem1 += `<li>${student.passions[j]}</li>`;
                 } else {
-                    skillsItem2 += `<li>${student.passions[j]}</li`;
+                    skillsItem2 += `<li>${student.passions[j]}</li>`;
                 };
             };
             template += `
@@ -82,7 +82,7 @@ function UserController() {
                     <div>
                         <div class="box">
                             <div>
-                                <img src="${student.imgLink}" id="${student.id}">
+                                <img src="${student.imgLink}" id="card-${student.id}">
                                 <div>
                                     <h4 class="name" id="name">${student.name}</h4>
                                     <a href="${student.gitLink}" target="_blank">

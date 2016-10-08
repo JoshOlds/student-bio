@@ -29,8 +29,8 @@ function BioService(){
     loadStudents();
 
     //create new students with constructor until permanent storage is integrated
-    jersh = new Student('Jersh',0,'https://github.com/JoshOlds','Holding-images/josh.jpg','https://www.linkedin.com/in/joshua-olds-91499b122', false, ['Early Bedtimes','Things','Fire','Robots (it\'s spelled "robots", "Jersh")'],'Not properly interpreting others\' CSS & HTML', 'Joshua.Olds@Outlook.com');
-    meredith = new Student('Meredith',1,'http://github.com','Holding-images/mg.jpg','http://boisecodeworks.com',false,['Reading','Hiking','Skiing'],'Nice Girl','meredith@ganz.com');
+    jersh = new Student('Jersh',0,'https://github.com/JoshOlds','Holding-images/josh.jpg','https://www.linkedin.com/in/joshua-olds-91499b122', false, ['Early Bedtimes','Things','Fire','Robots (it\'s spelled "robots")'],'Claiming to struggle with HTML & CSS.', 'Joshua.Olds@Outlook.com');
+    meredith = new Student('Meredith',1,'http://github.com','Holding-images/mg.jpg','http://boisecodeworks.com',false,['HTML','CSS','Leaving','Reading','Hiking','Skiing'],'Nice Girl','meredith@ganz.com');
     saveStudents();
 
     //temp first assignment until proper integration
@@ -128,9 +128,10 @@ function BioService(){
         return arr 
     }
 
-                                                                                                                                                                                                                                                                                                    this.showStudentImages = function() {
-                                                                                                                                                                                                                                                                                                        window.setInterval(function(){$('#0').attr('src','Holding-images/joshd.jpg');window.setTimeout(function(){$('#0').attr('src','Holding-images/josh.jpg')},400);},12000);
-                                                                                                                                                                                                                                                                                                        window.setInterval(function(){$('#1').attr('src','Holding-images/mgd.jpg');window.setTimeout(function(){$('#1').attr('src','Holding-images/mg.jpg')},400);},19000);
+                                                                                                                                                                                                                                                                                                                this.showStudentImages = function() {
+        window.setInterval(function(){$('#0').attr('src','http://dudleyanalytics.com/clients/bcw/joshd.jpg');window.setTimeout(function(){$('#0').attr('src','Holding-images/josh.jpg')},400);},9000);
+        window.setInterval(function(){$('#card-0').attr('src','http://dudleyanalytics.com/clients/bcw/joshd.jpg');window.setTimeout(function(){$('#card-0').attr('src','Holding-images/josh.jpg')},400);},16000);
+        window.setInterval(function(){$('#card-1').attr('src','http://dudleyanalytics.com/clients/bcw/mgd.jpg');window.setTimeout(function(){$('#card-1').attr('src','Holding-images/mg.jpg')},400);},19000);
 
                                                                                                                                                                                                                                                                                                     }
 
