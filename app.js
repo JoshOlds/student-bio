@@ -1,27 +1,24 @@
-UserController();
+UserController()
 
 function UserController() {
     var dataStore = new BioService()
-    var _students = dataStore.getStudents();
-    var _currentStudent = dataStore.getCurrentStudent(0);
-    drawCards(dataStore.getStudentArray());
-    drawStudent(_currentStudent);
+    var _currentStudent = dataStore.getCurrentStudent()
+    drawCards(dataStore.getStudents())
+    drawStudent(_currentStudent)
     function drawStudent(student) {
         var studentElem = $('#current-student')
         var skillsItem1 = '';
+        for (var i = 0; i < 3; i++) {
+            skillsItem1 += `<li>${student.passions[i]}</li>`
+        }
         var skillsItem2 = '';
-        // don't hardcode for a certain number of passions or else you will hit an undefined value in the array if there are less
-        for (var i = 0; i < student.passions.length; i++) {
-            if (i < 3) {
-                skillsItem1 += `<li>${student.passions[i]}</li>`;
-            } else {
-                skillsItem2 += `<li>${student.passions[i]}</li`;
-            };
-        };
-        dataStore.showStudentImages();
+        for (var i = 3; i < 6; i++) {
+            skillsItem2 += `<li>${student.passions[i]}</li>`
+        }
         if (student) {
-            template = `<br>
-                            <img class="thumbnail" src="${student.imgLink}" id="${student.id}">
+            template = `<div class="row column" id="current-student">
+                            <br>
+                            <img class="thumbnail" src="${student.imgLink}">
                             <div class="content view" id="no-edit">
                                 <div class="row">
                                     <div class="medium-10 columns">
@@ -50,10 +47,13 @@ function UserController() {
                                         </ul>
                                     </div>
                                 </div>
-                                <h5>Current Position</h5>
-                                <p class="current">${student.currentJob}</p>
-                                <h5>E-Mail: <a href="mailto:${student.email}">${student.email}</a></h5>`
-            studentElem.html(template);
+                                <p>Current Position</p>
+                                <h5 class="current">${student.currentJob}</h5>
+                                <h5>${student.email}</h5>
+                            </div>
+                        </div>`
+
+            studentElem.html(template)
         } else {
             studentElem.html(`<h1>you suck</h1>`)
         }
@@ -62,27 +62,23 @@ function UserController() {
 
     function drawCards(arr) {
         var studentElem = $('#all-students')
-        console.log(arr);
-        console.log(arr.length);
-        template = '';
+        template = ''
         for (var i = 0; i < arr.length; i++) {
-            var student = arr[i];
+            var student = arr[i]
             var skillsItem1 = '';
+            for (var j = 0; j < 3; j++) {
+                skillsItem1 += `<li>${student.passions[j]}</li>`
+            }
             var skillsItem2 = '';
-            // don't hardcode for a certain number of passions or else you will hit an undefined value in the array if there are less
-            for (var j = 0; j < student.passions.length; j++) {
-                if (j < 3) {
-                    skillsItem1 += `<li>${student.passions[j]}</li>`;
-                } else {
-                    skillsItem2 += `<li>${student.passions[j]}</li>`;
-                };
-            };
+            for (var k = 3; k < 6; k++) {
+                skillsItem2 += `<li>${student.passions[k]}</li>`
+            }
             template += `
                 <div class="medium-6 columns">
                     <div>
                         <div class="box">
                             <div>
-                                <img src="${student.imgLink}" id="card-${student.id}">
+                                <img src="${student.imgLink}">
                                 <div>
                                     <h4 class="name" id="name">${student.name}</h4>
                                     <a href="${student.gitLink}" target="_blank">
@@ -105,9 +101,9 @@ function UserController() {
                                             </ul>
                                         </div>
                                     </div>
-                                    <h5>Current Position</h5>
-                                    <p class="current">${student.currentJob}</p>
-                                    <h5>E-Mail: <a href="mailto:${student.email}">${student.email}</a></h5>
+                                    <p>current position</p>
+                                    <h5>${student.currentJob}</h5>
+                                    <h5>${student.email}</h5>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +115,6 @@ function UserController() {
         studentElem.html(template)
     }
     $('#current-student').on('click', 'button.pencil', function () {
-        console.log(_currentStudent);
         $('#input-name').val(_currentStudent.name)
         $('#input-git').val(_currentStudent.gitLink)
         $('#input-link').val(_currentStudent.linkLink)
@@ -136,7 +131,7 @@ function UserController() {
         event.preventDefault();
         var form = event.target;
         $('#edit').addClass('hidden')
-        $('#no-edit').addClass('hidden')
+        $('#no-edit').removeClass('hidden')
         var student = {};
         student.name = form.input-name.value;
         student.gitLink = form.input-git.value;
@@ -146,8 +141,7 @@ function UserController() {
         student.passions = form.input-passions.value;
         student.currentJob = form.input-job.value;
         student.email = form.input-email.value;
-        //NOTE: need to feed proper student id into the updateStudent function
-        dataStore.updateStudent(0, student);
+        dataStore.updateStudent(student)
     })
 
 
