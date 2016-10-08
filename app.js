@@ -7,7 +7,7 @@ function UserController() {
     drawStudent(_currentStudent)
     function drawCurrentStudent(student){
         var studentElem = $('#current-student')
-        var studentElem = $('#all-students')
+       
         if(student){
             template = `
         `
@@ -29,16 +29,16 @@ function UserController() {
         }
         studentElem.html(template)
     }
-    $('#current-student').on('click', 'button.edit', function(){
-        $('#').className = 'hidden'
-        $('#').className = 'view'
+    $('#current-student').on('click', 'button.pencil', function(){
+        $('#no-edit').className = 'hidden'
+        $('#edit').className = 'view'
     })
 
     $('#current-student').on('submit', 'button.save', function(event){
         event.preventDefault();
         var form = event.target;
-        $('#').className = 'hidden';
-        $('#').className = 'view';
+        $('#edit').className = 'hidden';
+        $('#no-edit').className = 'view';
         var student = {};
         student.name = form.name.value;
         student.gitLink = form.git.value;
