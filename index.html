@@ -13,13 +13,12 @@
 
 
     <div class="entire-page">
-        <!--<div class="off-canvas-wrapper">
-      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>-->
+   
         <!--left-side-card-->
         <div class="row fullWidth">
             <div class="medium-3 columns left-column">
 
-            <!--<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">-->
+          
             <div id="current-student">
                 <br>
                 <img class="thumbnail" src="http://placehold.it/550x350">
@@ -57,7 +56,7 @@
             <!--end leftside card -->
             <!--form-->
 
-            <form class="hidden">
+            <form id="edit" class="hidden">
                 <div class="row">
                     <div class="large-12 columns">
                         <input id="input-name" type="text" placeholder="Name"/>
@@ -121,7 +120,6 @@
 
             <!--general header section-->
             <div class="medium-9 columns">
-                <!--<div class="off-canvas-content" data-off-canvas-content>-->
                     <div class="title-bar hide-for-large">
                         <div class="title-bar-left">
                             <button class="menu-icon" type="button" data-open="my-info"></button>
@@ -129,8 +127,10 @@
                         </div>
                     </div>
                     <div class="callout primary">
-                        <div class="row column">
+                        <div class="row">
+                            <div class="medium-12 columns hundo-col">
                             <h2 class="text-center">Welcome to the Boise CodeWorks Student Info Portal</h2>
+                            </div>
                         </div>
                     </div>
                     <!--end header section-->
@@ -141,12 +141,33 @@
 
                         <!--front of card-->
                         <div class="row">
-                            <div class="medium-6 columns">
-                                <div class="card flip front face">
-                                    <div class="box">
+                            <div class="medium-6 columns flip">
+                                <div class="card">
+                                    <div class="box face front">
                                         <div class="image">
                                             <img src="http://static.pexels.com/wp-content/uploads/2014/07/alone-clouds-hills-1909-527x350.jpg">
-                                            <span class="title">Road Warrior</span>
+                                               <div class="content">
+                                            <h4 class="name" id="name">Meredith Ganz</h4>
+                                            <i class="fi-social-github" id="gitLink"></i>
+                                            <i class="fi-social-linkedin" id="imgLink"></i>
+                                            <p class="skills/passions" id="passions">Skills and areas of interest</p>
+                                            <div class="row">
+                                                <div class="medium-6 columns">
+                                                    <ul class="skills">
+                                                        <li>CSS</li>
+                                                        <li>HTML</li>
+                                                        <li>JavaScript</li>
+                                                </div>
+                                                <div class="medium-6 columns">
+                                                    <li>Reading</li>
+                                                    <li>Hiking</li>
+                                                    <li>Skiing</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <p class="current" id="currentJob">current position: Boise CodeWorks</p>
+                                            <p>Email</p>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -154,9 +175,9 @@
                             <!--end front of card-->
 
                             <!--back of card-->
-                            <div class="medium-6 columns">
-                                <div class="box box-info">
-                                    <div class="card flip back">
+                            <!--<div class="medium-6 columns flip">
+                                    <div class="card">
+                                <div class="box box-info face back">
                                         <div class="content">
                                             <h4 class="name" id="name">Meredith Ganz</h4>
                                             <i class="fi-social-github" id="gitLink"></i>
@@ -176,13 +197,12 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <p>current position</p>
-                                            <h5 class="current" id="currentJob">Boise CodeWorks</h5>
-                                            <h5>Email</h5>
+                                            <p class="current" id="currentJob">current position: Boise CodeWorks</p>
+                                            <p>Email</p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <!--end back of card-->
 
 
