@@ -112,14 +112,7 @@ function UserController() {
                                 </div>
                                 <!--end front of card-->
 
-                                <!--back of card-->
-                                <div class="medium-5 columns">
-                                    <div class="box box-info">
-                                        <div class="card flip back">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end back of card-->
+                              
 
 
                             </div>
