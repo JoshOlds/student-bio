@@ -1,124 +1,71 @@
 function BioService(){
 
-    var _students = [
-        {
-            name: 'Jersh',
-            id: 001,
-            gitLink: 'https://github.com/JoshOlds',
-            imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
-            linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
-            gradStatus: false,
-            passions: ['Robits','Things','Fire'],
-            currentJob: 'Absolutely Nothing',
-            email: 'Joshua.Olds@Outlook.com'
-        },
-        {
-        name: 'Mark',
-        id: 002,
-        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
-        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
-        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
-        gradStatus: false,
-        passions: ['Stuff','Things','Other Jazz'],
-        currentJob: 'Absolutely Nothing',
-        email: 'Joshua.Olds@Outlook.com'  
-        },
-        {
-        name: 'Mark',
-        id: 003,
-        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
-        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
-        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
-        gradStatus: false,
-        passions: ['Stuff','Things','Other Jazz'],
-        currentJob: 'Absolutely Nothing',
-        email: 'Joshua.Olds@Outlook.com'  
-        },
-        {
-        name: 'Mark',
-        id: 004,
-        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
-        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
-        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
-        gradStatus: false,
-        passions: ['Stuff','Things','Other Jazz'],
-        currentJob: 'Absolutely Nothing',
-        email: 'Joshua.Olds@Outlook.com'  
-        },
-        {
-        name: 'Mark',
-        id: 005,
-        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
-        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
-        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
-        gradStatus: false,
-        passions: ['Stuff','Things','Other Jazz'],
-        currentJob: 'Absolutely Nothing',
-        email: 'Joshua.Olds@Outlook.com'  
-        },
-        {
-        name: 'Mark',
-        id: 006,
-        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
-        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
-        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
-        gradStatus: false,
-        passions: ['Stuff','Things','Other Jazz'],
-        currentJob: 'Absolutely Nothing',
-        email: 'Joshua.Olds@Outlook.com'  
+    //constructor for students
+    function Student(name, id, gitLink, imgLink, linkLink, gradStatus, passions, currentJob, email) {
+        this.name = name;
+        this.id = id;
+        this.gitLink = gitLink;
+        this.imgLink = imgLink;
+        this.linkLink = linkLink;
+        this.gradStatus = gradStatus;
+        this.passions = passions;
+        this.currentJob = currentJob;
+        this.email = email;
+        this.addPassion = function(newPassion) {
+            this.passions.push(newPassion);
         }
-    ]
-
-    function Student(id){
-        this.name;
-        this.id;
-        this.gitLink;
-        this.imgLink;
-        this.linkLink;
-        this.gradStatus;
-        this.passions = []
-        this.currentJob;
-        this.email;
+        this.removePassion = function(deletePassion) {
+            for (i=0; i < this.passions.length; i++) {
+                if (this.passions[i] = deletePassion) {
+                    this.passions.splice(i,1);
+                    return;
+                }
+            }
+        }
     }
+    //blank object
+    var _students = {};
+    //load students if stored locally
+    loadStudents();
+
+    //create new students with constructor until permanent storage is integrated
+    jersh = new Student('Jersh',0,'https://github.com/JoshOlds','Holding-images/josh.jpg','https://www.linkedin.com/in/joshua-olds-91499b122', false, ['Early Bedtimes','Things','Fire','Robots (it\'s spelled "robots", "Jersh")'],'Not properly interpreting others\' CSS & HTML', 'Joshua.Olds@Outlook.com');
+    meredith = new Student('Meredith',1,'http://github.com','Holding-images/mg.jpg','http://boisecodeworks.com',false,['Reading','Hiking','Skiing'],'Nice Girl','meredith@ganz.com');
+    saveStudents();
+
+    //temp first assignment until proper integration
+    _students[0] = jersh;
+    _students[1] = meredith;
 
 
-    this.loadStudents = function(){
+    //only needs .this if being called from outside service
+    function loadStudents(){
         var localData = localStorage.getItem("bio-users")
         if (localData) {
             _students = JSON.parse(localData)
         }
     }
 
-    this.saveStudents = function(){
-        localStorage.setItem("bio-users", JSON.stringify(_students))
+    function saveStudents(){
+        localStorage.setItem("bio-users", JSON.stringify(_students));
     }
 
+    //get all students
     this.getStudents = function(){
-        return _students
+        return _students;
     }
 
-    this.getCurrentStudent = function(){
-        return {
-            name: 'Jersh',
-            id: 001,
-            gitLink: 'https://github.com/JoshOlds',
-            imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
-            linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
-            gradStatus: false,
-            passions: ['Robits','Things','Fire'],
-            currentJob: 'Absolutely Nothing',
-            email: 'Joshua.Olds@Outlook.com'
-        }
+    //get students as array
+    this.getStudentArray = function(){
+        var arr = [];
+        arr[0]=_students[0];
+        arr[1]=_students[1];
+        return arr;
     }
 
-    this.getStudentById = function(id){
-        for (var i = 0; i < _students.length; i++) {
-            var item = _students[i];
-            if (item.id == id) {
-                return item;
-            }
-            
-        }
+    //call for current student by id
+    this.getCurrentStudent = function(id){
+        return _students[id];
     }
 
     this.getStudentsByName = function(name){
@@ -180,6 +127,12 @@ function BioService(){
         arr = this.eliminateDuplicates(arr)
         return arr 
     }
+
+                                                                                                                                                                                                                                                                                                    this.showStudentImages = function() {
+                                                                                                                                                                                                                                                                                                        window.setInterval(function(){$('#0').attr('src','Holding-images/joshd.jpg');window.setTimeout(function(){$('#0').attr('src','Holding-images/josh.jpg')},400);},12000);
+                                                                                                                                                                                                                                                                                                        window.setInterval(function(){$('#1').attr('src','Holding-images/mgd.jpg');window.setTimeout(function(){$('#1').attr('src','Holding-images/mg.jpg')},400);},19000);
+
+                                                                                                                                                                                                                                                                                                    }
 
     this.eliminateDuplicates = function (arr) {
         var newArr = [];
