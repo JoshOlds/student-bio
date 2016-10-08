@@ -25,13 +25,13 @@ function UserController() {
                                         <h4 class="name">${student.name}</h4>
                                     </div>
                                     <div class="medium-2 columns">
-                                        <i class="fi-pencil pencil"></i>
+                                        <button class="pencil"><i class="fi-pencil"></i></button>
                                     </div>
                                 </div>
-                                <a href="${student.gitLink}">
+                                <a href="${student.gitLink}" target="_blank">
                                 <i class="fi-social-github"></i>
                                 </a>
-                                <a href="${student.linkLink}">
+                                <a href="${student.linkLink}" target="_blank">
                                 <i class="fi-social-linkedin"></i>
                                 </a>
                                 <p class="skills/passions">Skills and areas of interests</p>
@@ -66,12 +66,12 @@ function UserController() {
         for (var i = 0; i < arr.length; i++) {
             var student = arr[i]
             var skillsItem1 = '';
-            for (var i = 0; i < 3; i++) {
-                skillsItem1 += `<li>${student.passions[i]}</li>`
+            for (var j = 0; j < 3; j++) {
+                skillsItem1 += `<li>${student.passions[j]}</li>`
             }
             var skillsItem2 = '';
-            for (var i = 3; i < 6; i++) {
-                skillsItem2 += `<li>${student.passions[i]}</li>`
+            for (var k = 3; k < 6; k++) {
+                skillsItem2 += `<li>${student.passions[k]}</li>`
             }
             template += `<div class="row">
                             <div class="medium-2 columns"></div>
@@ -93,10 +93,10 @@ function UserController() {
                                         <div class="card flip back">
                                             <div class="content">
                                                 <h4 class="name" id="name">${student.name}</h4>
-                                                <a href="${student.gitLink}">
+                                                <a href="${student.gitLink}" target="_blank">
                                                     <i class="fi-social-github"></i>
                                                 </a>
-                                                <a href="${student.linkLink}">
+                                                <a href="${student.linkLink}" target="_blank">
                                                     <i class="fi-social-linkedin"></i>
                                                 </a>
 
@@ -130,16 +130,16 @@ function UserController() {
         studentElem.html(template)
     }
     $('#current-student').on('click', 'button.pencil', function () {
-
-        $('#no-edit').className = 'hidden'
-        $('#edit').className = 'view'
+        debugger
+        $('#no-edit').addClass('hidden')
+        $('#edit').removeClass('hidden')
     })
 
     $('#current-student').on('submit', 'button.save', function (event) {
         event.preventDefault();
         var form = event.target;
-        $('#edit').className = 'hidden';
-        $('#no-edit').className = 'view';
+        $('#edit').addClass('hidden')
+        $('#no-edit').removeClass('hidden')
         var student = {};
         student.name = form.input-name.value;
         student.gitLink = form.input-git.value;
