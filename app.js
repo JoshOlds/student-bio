@@ -4,10 +4,11 @@ function UserController() {
     var dataStore = new BioService()
     var _currentStudent = dataStore.getCurrentStudent()
     drawCards(dataStore.getStudents())
+    drawStudent(_currentStudent)
     function drawCurrentStudent(student){
         var studentElem = $('#current-student')
         var studentElem = $('#all-students')
-        if(_currentStudent){
+        if(student){
             template = `
         `
         studentElem.html(template)
@@ -16,7 +17,7 @@ function UserController() {
         }   
     }
 
-}
+
     function drawCards(arr){
         var studentElem = $('#all-students')
         template = ''
@@ -46,6 +47,7 @@ function UserController() {
         student.passions = form.passions.value;
         student.currentJob = form.job.value;
         student.email = form.email.value;
+        dataStore.updateStudent(student)
     })    
     
 
