@@ -3,6 +3,7 @@ UserController();
 function UserController() {
     var dataStore = new BioService()
     var _students = dataStore.getStudents();
+    //probably want this to reflect the last person who was current student, currently hard-coded to start at id 0
     var _currentStudent = dataStore.getCurrentStudent(0);
     drawCards(dataStore.getStudentArray());
     drawStudent(_currentStudent);
@@ -15,13 +16,13 @@ function UserController() {
             if (i < 3) {
                 skillsItem1 += `<li>${student.passions[i]}</li>`;
             } else {
-                skillsItem2 += `<li>${student.passions[i]}</li`;
+                skillsItem2 += `<li>${student.passions[i]}</li>`;
             };
         };
         dataStore.showStudentImages();
         if (student) {
             template = `<br>
-                            <img class="thumbnail" src="${student.imgLink}" id="${student.id}">
+                            <img class="thumbnail text-center" src="${student.imgLink}" id="${student.id}">
                             <div class="content view" id="no-edit">
                                 <div class="row">
                                     <div class="medium-10 columns">
@@ -37,7 +38,7 @@ function UserController() {
                                 <a href="${student.linkLink}" target="_blank">
                                 <i class="fi-social-linkedin"></i>
                                 </a>
-                                <p class="skills/passions">Skills and areas of interests</p>
+                                <h5 class="skills/passions">Skills & Interests</h5>
                                 <div class="row">
                                     <div class="medium-6 columns">
                                         <ul class="skills">
@@ -52,7 +53,7 @@ function UserController() {
                                 </div>
                                 <h5>Current Position</h5>
                                 <p class="current">${student.currentJob}</p>
-                                <h5>E-Mail: <a href="mailto:${student.email}">${student.email}</a></h5>`
+                                <p>E-Mail: <a href="mailto:${student.email}">${student.email}</a></p>`
             studentElem.html(template);
         } else {
             studentElem.html(`<h1>you suck</h1>`)
@@ -80,10 +81,10 @@ function UserController() {
             template += `
                 <div class="medium-6 columns">
                     <div>
-                        <div class="box">
-                            <div>
-                                <img src="${student.imgLink}" id="card-${student.id}">
-                                <div>
+                        <div class="box" id="box-${student.id}">
+                            <div class="text-center">
+                                <img src="${student.imgLink}" class="student-img" id="card-${student.id}">
+                                <div class="text-left">
                                     <h4 class="name" id="name">${student.name}</h4>
                                     <a href="${student.gitLink}" target="_blank">
                                         <i class="fi-social-github"></i>
@@ -92,22 +93,22 @@ function UserController() {
                                         <i class="fi-social-linkedin"></i>
                                     </a>
 
-                                    <p>Skills and Areas of Interest</p>
+                                    <h5>Skills & Interests</h5>
                                     <div class="row">
                                         <div class="medium-6 columns">
-                                            <ul>
+                                            <ul class="skills">
                                                 ${skillsItem1}
                                             </ul>
                                         </div>
                                         <div class="medium-6 columns">
-                                            <ul>
+                                            <ul class="skills">
                                                 ${skillsItem2}
                                             </ul>
                                         </div>
                                     </div>
                                     <h5>Current Position</h5>
                                     <p class="current">${student.currentJob}</p>
-                                    <h5>E-Mail: <a href="mailto:${student.email}">${student.email}</a></h5>
+                                    <p>E-Mail: <a href="mailto:${student.email}">${student.email}</a></p>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +150,11 @@ function UserController() {
         //NOTE: need to feed proper student id into the updateStudent function
         dataStore.updateStudent(0, student);
     })
-
-
+    //when box of student is clicked, push them to the left sidebar
+    $('.box').on('click', function () {
+        numId = parseInt(this.id.slice(4,this.id.length));
+        _currentStudent = _students[numId];
+        drawStudent(_students[numId]);
+    });
 
 }
