@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Student Bio</title>
@@ -7,191 +8,208 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="bundle.css">
 </head>
+
 <body>
 
-   <div class="off-canvas-wrapper">
-      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-          <!--left-side-card-->
+    <div class="entire-page">
+        <!--<div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>-->
+        <!--left-side-card-->
+        <div class="row fullWidth">
+            <div class="medium-3 columns">
 
-        <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
-          <div class="row column" id="current-student">
-            <br>
-            <img class="thumbnail" src="http://placehold.it/550x350">
-            <div class="content view" id="no-edit">
+            <!--<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">-->
+            <div id="current-student">
+                <br>
+                <img class="thumbnail" src="http://placehold.it/550x350">
+                <div class="content view" id="no-edit">
+                    <div class="row">
+                        <div class="medium-10 columns">
+                            <h4 class="name">Meredith Ganz</h4>
+                        </div>
+                        <div class="medium-2 columns">
+                            <i class="fi-pencil pencil"></i>
+                        </div>
+                    </div>
+                    <i class="fi-social-github"></i>
+                    <i class="fi-social-linkedin"></i>
+                    <p class="skills/passions">Skills and areas of interest</p>
+                    <div class="row">
+                        <div class="medium-6 columns">
+                            <ul class="skills">
+                                <li>CSS</li>
+                                <li>HTML</li>
+                                <li>JavaScript</li>
+                        </div>
+                        <div class="medium-6 columns">
+                            <li>Reading</li>
+                            <li>Hiking</li>
+                            <li>Skiing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p>current position</p>
+                    <h5 class="current">Boise CodeWorks</h5>
+                    <h5>Email</h5>
+                </div>
+            </div>
+            <!--end leftside card -->
+            <!--form-->
+
+            <form class="hidden">
                 <div class="row">
-                    <div class="medium-10 columns">
-            <h4 class="name">Meredith Ganz</h4>
-            </div>
-            <div class="medium-2 columns">
-            <i class="fi-pencil pencil"></i>
-            </div>
-            </div>
-             <i class="fi-social-github"></i>
-            <i class="fi-social-linkedin"></i>
-            <p class="skills/passions">Skills and areas of interest</p>
-            <div class="row">
-            <div class="medium-6 columns">   
-            <ul class="skills">
-            <li>CSS</li>
-            <li>HTML</li>
-            <li>JavaScript</li>
-            </div>
-            <div class="medium-6 columns">  
-            <li>Reading</li>
-            <li>Hiking</li>
-            <li>Skiing</li>
-            </ul>
-            </div>
-        </div>
-            <p>current position</p>
-            <h5 class="current">Boise CodeWorks</h5>
-            <h5>Email</h5>
-      </div>
-          </div>
- <!--end leftside card -->
-<!--form-->
+                    <div class="large-12 columns">
+                        <input id="input-name" type="text" placeholder="Name"/>
+                    </div>
+                </div>
 
-<form class="hidden">
-     <div class="row">
-    <div class="large-12 columns">
-        <input type="text" placeholder="Name"/>
-    </div>
-  </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input id="input-git" type="text" placeholder="gitHub Link"/>
+                    </div>
+                </div>
 
-<div class="row">
-    <div class="large-12 columns">
-        <input type="text" placeholder="gitHub Link"/>
-    </div>
-  </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input id="input-img" type="text" placeholder="Image Link"/>
+                    </div>
+                </div>
 
-  <div class="row">
-    <div class="large-12 columns">
-        <input type="text" placeholder="Image Link"/>
-    </div>
-  </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input id="input-link" type="text" placeholder="LinkedIn URL" />
+                    </div>
+                </div>
 
-    <div class="row">
-    <div class="large-12 columns">
-        <input type="text" placeholder="LinkedIn URL"/>
-    </div>
-  </div>
+                <div class="row">
+                    <div class="sm-6 columns">
+                        <label>Have you graduated?</label>
+                        <input id="input-grad" type="checkbox"><label for="checkbox1">Yes</label>
+                    </div>
+                </div>
 
- <div class="row">
-    <div class="sm-6 columns">
-         <label>Have you graduated?</label>
-      <input id="checkbox1" type="checkbox"><label for="checkbox1">Yes</label>
-      <input id="checkbox2" type="checkbox"><label for="checkbox2">No</label>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Enter your skills separated by commas
-        <textarea placeholder="CSS, HTML, JavaScript, YouTube Video"></textarea>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label>Enter your skills separated by commas
+        <textarea id="input-passions" placeholder="CSS, HTML, JavaScript, YouTube Video"></textarea>
       </label>
-    </div>
-  </div>
+                    </div>
+                </div>
 
-    <div class="row">
-    <div class="large-12 columns">
-        <input type="text" placeholder="Current Job"/>
-    </div>
-  </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input id="input-job" type="text" placeholder="Current Job" />
+                    </div>
+                </div>
 
-<div class="row">
-    <div class="large-12 columns">
-        <input type="text" placeholder="Email"/>
-    </div>
-  </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input id="input-email" type="text" placeholder="Email" />
+                    </div>
+                </div>
 
-</form>    
+            </form>
 
-<!--end form-->
+            <!--end form-->
 
-        </div><!--end my-info -->
+            <!--</div>  end my-info -->
 
-<!--end of left-side content-->
-
-
-<!--general header section-->
-           <div class="off-canvas-content" data-off-canvas-content>
-          <div class="title-bar hide-for-large">
-            <div class="title-bar-left">
-              <button class="menu-icon" type="button" data-open="my-info"></button>
-              <span class="title-bar-title">Mike Mikerson</span>
+            <!--end of left-side content-->
             </div>
-          </div>
-          <div class="callout primary">
-            <div class="row column">
-              <h1>Hello! This is the portfolio of a very witty person.</h1>
-              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla.</p>
+
+
+            <!--general header section-->
+            <div class="medium-9 columns">
+                <div class="off-canvas-content" data-off-canvas-content>
+                    <div class="title-bar hide-for-large">
+                        <div class="title-bar-left">
+                            <button class="menu-icon" type="button" data-open="my-info"></button>
+                            <span class="title-bar-title">Mike Mikerson</span>
+                        </div>
+                    </div>
+                    <div class="callout primary">
+                        <div class="row column">
+                            <h1>Hello! This is the portfolio of a very witty person.</h1>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies
+                                ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra.
+                                Nulla fringilla.
+                            </p>
+                        </div>
+                    </div>
+                    <!--end header section-->
+
+                    <!--all students section-->
+
+                    <div id="all-students">
+
+                        <!--front of card-->
+                        <div class="row">
+                            <div class="medium-6 columns">
+                                <div class="card flip front face">
+                                    <div class="box">
+                                        <div class="image">
+                                            <img src="http://static.pexels.com/wp-content/uploads/2014/07/alone-clouds-hills-1909-527x350.jpg">
+                                            <span class="title">Road Warrior</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end front of card-->
+
+                            <!--back of card-->
+                            <div class="medium-6 columns">
+                                <div class="box box-info">
+                                    <div class="card flip back">
+                                        <div class="content">
+                                            <h4 class="name" id="name">Meredith Ganz</h4>
+                                            <i class="fi-social-github" id="gitLink"></i>
+                                            <i class="fi-social-linkedin" id="imgLink"></i>
+                                            <p class="skills/passions" id="passions">Skills and areas of interest</p>
+                                            <div class="row">
+                                                <div class="medium-6 columns">
+                                                    <ul class="skills">
+                                                        <li>CSS</li>
+                                                        <li>HTML</li>
+                                                        <li>JavaScript</li>
+                                                </div>
+                                                <div class="medium-6 columns">
+                                                    <li>Reading</li>
+                                                    <li>Hiking</li>
+                                                    <li>Skiing</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <p>current position</p>
+                                            <h5 class="current" id="currentJob">Boise CodeWorks</h5>
+                                            <h5>Email</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end back of card-->
+
+
+                        </div>
+                        <!--end card row-->
+                        <!--</div> <!--end all students -->
+
+                        <!--</div> end general header section -->
+                    </div>
+                </div>
             </div>
-          </div>
-<!--end header section-->
-          
-  <!--all students section-->
-
-<div id="all-students">
-
-<!--front of card-->
-<div class="row">
-        <div class="medium-2 columns"></div>
-      <div class="medium-5 columns">
-          <div class="card flip front face">
-        <div class="box">
-          <div class="image">
-           <img src="http://static.pexels.com/wp-content/uploads/2014/07/alone-clouds-hills-1909-527x350.jpg">
-        <span class="title">Road Warrior</span>
+            <!--end big row-->
         </div>
-      </div>
     </div>
-    </div>
-<!--end front of card-->
+    <!--end of entire page-->
 
-<!--back of card-->
-  <div class="medium-5 columns">
-    <div class="box box-info">
-      <div class="card flip back">
-        <div class="content">
-            <h4 class="name" id="name">Meredith Ganz</h4>
-             <i class="fi-social-github" id="gitLink"></i>
-            <i class="fi-social-linkedin" id="imgLink"></i>
-            <p class="skills/passions" id="passions">Skills and areas of interest</p>
-            <div class="row">
-            <div class="medium-6 columns">   
-            <ul class="skills">
-            <li>CSS</li>
-            <li>HTML</li>
-            <li>JavaScript</li>
-            </div>
-            <div class="medium-6 columns">  
-            <li>Reading</li>
-            <li>Hiking</li>
-            <li>Skiing</li>
-            </ul>
-            </div>
-        </div>
-            <p>current position</p>
-            <h5 class="current" id="currentJob">Boise CodeWorks</h5>
-            <h5>Email</h5>
-      </div>
-  </div>
-</div>
-</div>
-<!--end back of card-->
-
-
-</div> <!--end card row-->
-</div> <!--end all students -->
-
-</div> <!--end general header section -->
 
 
 
 </body>
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
- <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 <script src="app.js"></script>
 <script src="bio-service.js"></script>
 <script src="linked-in.js"></script>
+
 </html>
