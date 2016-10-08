@@ -6,6 +6,7 @@ function BioService(){
             id: 001,
             gitLink: 'https://github.com/JoshOlds',
             imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+            linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
             gradStatus: false,
             passions: ['Robits','Things','Fire'],
             currentJob: 'Absolutely Nothing',
@@ -14,10 +15,55 @@ function BioService(){
         {
         name: 'Mark',
         id: 002,
-        gitLink: 'https://github.com/JoshOlds',
+        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
         imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
         gradStatus: false,
-        passions: ['Robits','Things','Fire'],
+        passions: ['Stuff','Things','Other Jazz'],
+        currentJob: 'Absolutely Nothing',
+        email: 'Joshua.Olds@Outlook.com'  
+        },
+        {
+        name: 'Mark',
+        id: 003,
+        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
+        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
+        gradStatus: false,
+        passions: ['Stuff','Things','Other Jazz'],
+        currentJob: 'Absolutely Nothing',
+        email: 'Joshua.Olds@Outlook.com'  
+        },
+        {
+        name: 'Mark',
+        id: 004,
+        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
+        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
+        gradStatus: false,
+        passions: ['Stuff','Things','Other Jazz'],
+        currentJob: 'Absolutely Nothing',
+        email: 'Joshua.Olds@Outlook.com'  
+        },
+        {
+        name: 'Mark',
+        id: 005,
+        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
+        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
+        gradStatus: false,
+        passions: ['Stuff','Things','Other Jazz'],
+        currentJob: 'Absolutely Nothing',
+        email: 'Joshua.Olds@Outlook.com'  
+        },
+        {
+        name: 'Mark',
+        id: 006,
+        gitLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
+        imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+        linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
+        gradStatus: false,
+        passions: ['Stuff','Things','Other Jazz'],
         currentJob: 'Absolutely Nothing',
         email: 'Joshua.Olds@Outlook.com'  
         }
@@ -28,6 +74,7 @@ function BioService(){
         this.id;
         this.gitLink;
         this.imgLink;
+        this.linkLink;
         this.gradStatus;
         this.passions = []
         this.currentJob;
@@ -56,6 +103,7 @@ function BioService(){
             id: 001,
             gitLink: 'https://github.com/JoshOlds',
             imgLink: 'https://avatars0.githubusercontent.com/u/8272568?v=3&s=466',
+            linkLink: 'https://www.linkedin.com/in/joshua-olds-91499b122',
             gradStatus: false,
             passions: ['Robits','Things','Fire'],
             currentJob: 'Absolutely Nothing',
