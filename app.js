@@ -80,17 +80,6 @@ function UserController() {
                                     <div class="box">
                                         <div class="image">
                                             <img src="${student.imgLink}">
-                                                <span class="title">${student.name}</span>
-                                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--end front of card-->
-
-                                <!--back of card-->
-                                <div class="medium-5 columns">
-                                    <div class="box box-info">
-                                        <div class="card flip back">
                                             <div class="content">
                                                 <h4 class="name" id="name">${student.name}</h4>
                                                 <a href="${student.gitLink}" target="_blank">
@@ -117,6 +106,16 @@ function UserController() {
                                                 <h5 class="current" id="currentJob">${student.currentJob}</h5>
                                                 <h5>${student.email}</h5>
                                             </div>
+                                               </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end front of card-->
+
+                                <!--back of card-->
+                                <div class="medium-5 columns">
+                                    <div class="box box-info">
+                                        <div class="card flip back">
                                         </div>
                                     </div>
                                 </div>
