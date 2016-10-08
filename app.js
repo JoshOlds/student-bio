@@ -135,7 +135,7 @@ function UserController() {
         $('#edit').removeClass('hidden')
     })
 
-    $('#current-student').on('submit', 'button.save', function (event) {
+    $('#current-student').on('submit', function (event) {
         event.preventDefault();
         var form = event.target;
         $('#edit').addClass('hidden')
