@@ -5,15 +5,15 @@ function UserController() {
     var _currentStudent = dataStore.getCurrentStudent()
     drawCards(dataStore.getStudents())
     drawStudent(_currentStudent)
-    function drawCurrentStudent(student) {
+    function drawStudent(student) {
         var studentElem = $('#current-student')
         var skillsItem1 = '';
         for (var i = 0; i < 3; i++) {
-            skillsItems1 += `<li>${student.passions[i]}</li>`
+            skillsItem1 += `<li>${student.passions[i]}</li>`
         }
         var skillsItem2 = '';
         for (var i = 3; i < 6; i++) {
-            skillsItems2 += `<li>${student.passions[i]}</li>`
+            skillsItem2 += `<li>${student.passions[i]}</li>`
         }
         if (student) {
             template = `<div class="row column" id="current-student">
@@ -38,12 +38,12 @@ function UserController() {
                                 <div class="row">
                                     <div class="medium-6 columns">
                                         <ul class="skills">
-                                        ${skillsItems1}
+                                        ${skillsItem1}
                                         </ul>   
                                     </div>
                                     <div class="medium-6 columns">
                                         <ul class= "skills">
-                                        ${skillsItems2}
+                                        ${skillsItem2}
                                         </ul>
                                     </div>
                                 </div>
@@ -67,11 +67,11 @@ function UserController() {
             var student = arr[i]
             var skillsItem1 = '';
             for (var i = 0; i < 3; i++) {
-                skillsItems1 += `<li>${student.passions[i]}</li>`
+                skillsItem1 += `<li>${student.passions[i]}</li>`
             }
             var skillsItem2 = '';
             for (var i = 3; i < 6; i++) {
-                skillsItems2 += `<li>${student.passions[i]}</li>`
+                skillsItem2 += `<li>${student.passions[i]}</li>`
             }
             template += `<div class="row">
                             <div class="medium-2 columns"></div>
@@ -104,12 +104,12 @@ function UserController() {
                                                 <div class="row">
                                                     <div class="medium-6 columns">
                                                         <ul class="skills">
-                                                            ${skillsItems1}
+                                                            ${skillsItem1}
                                                         </ul>
                                                     </div>
                                                     <div class="medium-6 columns">
                                                         <ul class= "skills">
-                                                            ${skillsItems2}
+                                                            ${skillsItem2}
                                                         </ul>
                                                     </div>
                                                 </div>
