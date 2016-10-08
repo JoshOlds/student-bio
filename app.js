@@ -70,7 +70,7 @@ function UserController() {
             var skillsItem1 = '';
             var skillsItem2 = '';
             // don't hardcode for a certain number of passions or else you will hit an undefined value in the array if there are less
-            for (var j = 1; j < student.length; j++) {
+            for (var j = 1; j < student.passions.length; j++) {
                 if (j < 3) {
                     skillsItem1 += `<li>${student.passions[j]}</li>`;
                 } else {
