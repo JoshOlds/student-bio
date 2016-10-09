@@ -1,6 +1,6 @@
 $dodgerblue: #2c99d4;
-$darkgray: #a6a6a6;
-$gray: #787778;
+$gray: #a6a6a6;
+$darkgray: #787778;
 $mediumturquoise: #39a6dd;
 
 
@@ -16,6 +16,7 @@ $mediumturquoise: #39a6dd;
   }
 
   .hundo-col{
+    color: $dodgerblue;
    max-width: 100%;
    margin-left: auto;
    margin-right: auto;
@@ -23,11 +24,38 @@ $mediumturquoise: #39a6dd;
 
   }
 
+  .box img{
+    display: block;
+    margin: auto;
+  
+  }
+
+.box{
+  color: black;
+}
+
+  .fi-pencil{
+    font-size: 2rem;
+  }
+
+  i{
+    font-size: 2.3rem;
+  }
+
+ul{
+  list-style-type: none;
+}
+
+
 .left-column{
   border-right: 2px solid black;
 }
 
 .text-center{
+  text-align: center;
+}
+
+.name{
   text-align: center;
 }
 

@@ -34,7 +34,7 @@ function UserController() {
                                 <a href="${student.linkLink}" target="_blank">
                                 <i class="fi-social-linkedin"></i>
                                 </a>
-                                <p class="skills/passions">Skills and areas of interests</p>
+                                <h5 class="skills/passions">Skills and areas of interests:</h5>
                                 <div class="row">
                                     <div class="medium-6 columns">
                                         <ul class="skills">
@@ -47,7 +47,7 @@ function UserController() {
                                         </ul>
                                     </div>
                                 </div>
-                                <p>Current Position</p>
+                                <h5>Current Position:</h5>
                                 <h5 class="current">${student.currentJob}</h5>
                                 <h5>${student.email}</h5>
                             </div>
@@ -81,15 +81,21 @@ function UserController() {
                                 <img src="${student.imgLink}">
                                 <div>
                                     <h4 class="name" id="name">${student.name}</h4>
+                                    <div class="row">
+                                     <div class="medium-6 columns text-center">
                                     <a href="${student.gitLink}" target="_blank">
                                         <i class="fi-social-github"></i>
                                     </a>
+                                    </div>
+                                     <div class="medium-6 columns text-center">
                                     <a href="${student.linkLink}" target="_blank">
                                         <i class="fi-social-linkedin"></i>
                                     </a>
+                                    </div>
+                                    </div>
 
-                                    <p>Skills and Areas of Interest</p>
-                                    <div class="row">
+                                    <h5 class="text-center">Skills and Areas of Interest:</h5>
+                                    <div class="row text-center">
                                         <div class="medium-6 columns">
                                             <ul>
                                                 ${skillsItem1}
@@ -101,9 +107,9 @@ function UserController() {
                                             </ul>
                                         </div>
                                     </div>
-                                    <p>current position</p>
-                                    <h5>${student.currentJob}</h5>
-                                    <h5>${student.email}</h5>
+                                    <h5 class="text-center">Current position:</h5>
+                                    <h5 class="text-center">${student.currentJob}</h5>
+                                    <h5 class="text-center">${student.email}</h5>
                                 </div>
                             </div>
                         </div>

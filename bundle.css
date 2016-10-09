@@ -8,15 +8,35 @@ body {
   max-width: initial; }
 
 .hundo-col {
+  color: #2c99d4;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   max-width: initial; }
 
+.box img {
+  display: block;
+  margin: auto; }
+
+.box {
+  color: black; }
+
+.fi-pencil {
+  font-size: 2rem; }
+
+i {
+  font-size: 2.3rem; }
+
+ul {
+  list-style-type: none; }
+
 .left-column {
   border-right: 2px solid black; }
 
 .text-center {
+  text-align: center; }
+
+.name {
   text-align: center; }
 
 .fullWidth {
@@ -33,6 +53,4 @@ body {
   margin-top: 60px; }
 
 .hidden {
-  display: none;
-}
-
+  display: none; }
